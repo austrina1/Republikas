@@ -13,14 +13,17 @@ namespace Day1._2
              Console.WriteLine(Piemers2(3, a));
              Console.ReadLine();
              */
-            Console.WriteLine("Ievadiet skaitli");
-            String ievade = Console.ReadLine();
-            int skaitlis1 = Convert.ToInt16(ievade);
+            
 
-            Console.WriteLine("Ievadiet skaitli");
-            ievade = Console.ReadLine();
 
-            int skaitlis2 = Convert.ToInt16(ievade);
+         
+
+            int skaitlis1 = IevadītSkaitli("Ievadīt pirmo skaitli");
+
+           
+
+            int skaitlis2 = IevadītSkaitli("Ievadīt otro skaitli");
+
 
             int result = SaskaitītVaiAtņemt(skaitlis1, skaitlis2);
             Console.WriteLine(result);
@@ -94,9 +97,23 @@ namespace Day1._2
             }
 
         }  
+        static int IevadītSkaitli(String izvadāmaZiņa) 
+        {
+            Console.WriteLine(izvadāmaZiņa);
+            String ievade = Console.ReadLine();
+
+            return Convert.ToInt16(ievade);
+
+        }
+
+
+
+
+
+
         //funkcija, kas lauj cilvekam izveleties vai saskaita vai atnem
         //return, gan parametriem
 
-        
-}
+
+    }
 }
