@@ -18,35 +18,17 @@ namespace Day2
             int skaitlis1 = IevaditSkaitli("Ievadit pirmo skaitli");
             int skaitlis2 = IevaditSkaitli("Ievadit otro skaitli");
 
-            int result = SaskaititVaiAtnemt(skaitlis1, skaitlis2);
-            Console.WriteLine(result);
-            Console.ReadLine();
-
 
         }
 
 
-        static int SaskaititVaiAtnemt(int a, int b)
+        public static int Saskaitit(int a, int b)
         {
-            Console.WriteLine("Saskaitit, atnemt vai kāpināt?");
-            String izvele = Console.ReadLine();
-
-            if (izvele == "+")
-            {
-                return a + b;
-            }
-            else if (izvele == "-")
-            {
-                return a - b;
-            }
-            else if (izvele == "^")
-            {
-                return Kāpināt();
-            }
-            else 
-            {
-                return -9999;
-                }
+            return a + b;
+        }
+        public static int Atņemt(int a, int b)
+        {
+            return a - b;
         }
 
         static int IevaditSkaitli(String izvadamaZina)
@@ -57,8 +39,7 @@ namespace Day2
 
             return Convert.ToInt16(ievade);
         }
-
-        public int Kāpināt(int bāze, int pakāpe)
+        public static int Kāpināt(int bāze, int pakāpe)
 
         {
             int result = 1;
@@ -70,6 +51,6 @@ namespace Day2
         }
 
 
-
     }
+   
 }
