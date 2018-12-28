@@ -5,28 +5,40 @@ namespace ZiemassvētkuMājasdarbs
 {
     public class FailuLasisanaUnRakstisana
     {
-     
+
 
         public void LasitUnApmainīt()
         {
-            //ielasam rindas no faila masiva (ta ka piemera)
-            //tas bus string tipa masivs, konvertejam uz int
 
             string[] lines = File.ReadAllLines(@"dzejolis.txt");
 
-            // Display the file contents by using a foreach loop.
-
-
-            System.Console.WriteLine("Dzejolītis:");
             foreach (string line in lines)
             {
-                // Use a tab to indent each line of the file.
                 Console.WriteLine("\t" + line);
+
             }
 
             Console.ReadLine();
 
+            String[] reverseLines = new string[lines.Length];
+            for (int i = 0; i < lines.Length; i++)
+            {
+                reverseLines[i] = lines[lines.Length - 1 - i];
+                Console.WriteLine(reverseLines[i]);
+            }
+
+
+
+            using (System.IO.StreamWriter file =
+                new System.IO.StreamWriter(@"dzejolis1.txt"))
+            {
+                foreach (string line in reverseLines)
+                {
+                    file.WriteLine(line);
+                }
+            }
         }
 
     }
 }
+
